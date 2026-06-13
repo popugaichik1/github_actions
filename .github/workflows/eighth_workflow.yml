@@ -1,0 +1,22 @@
+name: Eighth workflow
+on: 
+    workflow_dispatch:
+        inputs:
+            titleCustom:
+                description: Type the Title
+                type: string
+                required: true 
+                default: "Hello world" 
+
+jobs: 
+    run-first-command: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: Event Vars
+              run: |
+                echo $GITHUB_SHA
+                echo $GITHUB_REF
+
+
+
+                
