@@ -1,4 +1,4 @@
-name: Third_workflow
+name: Third workflow
 on: push
 
 jobs: 
