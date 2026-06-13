@@ -1,5 +1,5 @@
 name: First_workflow
-on: [push]
+on: workflow_dispatch
 
 jobs: 
     run-first-command: 
@@ -11,4 +11,3 @@ jobs:
               run: |
                 node -v
                 npm -v
-                
