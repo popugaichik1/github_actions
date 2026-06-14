@@ -7,6 +7,9 @@ jobs:
     job:
         runs-on: ubuntu-latest
         steps:
+            - name: Failure
+              id: error-step
+              run: exit 1
             
             - name: Runs on Canceled
               #возвращает run, если предидущие шаги были отменены
@@ -22,7 +25,7 @@ jobs:
               run: echo "Runs on Success case"
 
             - name: Runs on Failure Case
-              if: ${{ failure() }}
+              if: ${{ failure() && steps.error-step.conclusion == 'failure' }}
               run: echo "Runs on Failure case"
 
     second-job:
