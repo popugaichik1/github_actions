@@ -5,11 +5,11 @@ jobs:
   testing-matrix-job:
     strategy: 
         matrix:
+            os: [ubuntu-latest, window-latest]
             node-version: [12, 14, 18]
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - run: node -v
-      
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
