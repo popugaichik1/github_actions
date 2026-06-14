@@ -12,7 +12,7 @@ jobs:
             
             - name: Runs on Canceled
               #возвращает run, если предидущие шаги были отменены
-              if: ${{ canceled() }}
+              if: ${{ cancelled() }}
               run: echo "Runs on Canceled"
             
             - name: Runs on any case
