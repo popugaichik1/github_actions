@@ -1,0 +1,21 @@
+name: Twelve workflow
+on: [push]
+
+#переменная уровня воркфлоу
+env:
+    WF_CUSTOM_VAR: 1
+
+jobs: 
+    run-first-command: 
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Our Vars & Secrets
+              run: |
+                echo '${{ vars.STATUS }}'
+                echo '${{ secrets.PASSWORD }}'
+    
+
+
+
+                
