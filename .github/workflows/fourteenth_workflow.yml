@@ -1,5 +1,5 @@
 name: Fourteen workflow
-on: push
+on: workflow_dispatch
 
 jobs:
   first-job:
@@ -18,7 +18,7 @@ jobs:
       
         #выводит инфу о кэше
       - name: Display Cache
-        run: echo '${{ steps.cache-step.outputs }}'
+        run: echo '${{ toJSON(steps.cache-step.outputs) }}'
       
         #инсталирует заивисимости
       - name: Install node_modules
