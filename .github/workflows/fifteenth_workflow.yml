@@ -1,0 +1,14 @@
+name: Fifeteenth Workflow
+on: push
+
+jobs:
+    first-jobs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Math expressions
+              run: expr 2 + 2 > math-result.txt
+            - name: Upload result file 
+              uses: actions/upload-artifact@v7
+              with: 
+                name: math-result
+                path: math-result.txt
