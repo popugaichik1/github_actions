@@ -6,7 +6,7 @@ jobs:
     continue-on-error: true
     strategy: 
         matrix:
-            os: [ubuntu-latest, window-latest]
+            os: [ubuntu-latest, windows-latest]
             node-version: [12, 14, 18]
         fail-fast: false
         max-parallel: 2
