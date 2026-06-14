@@ -19,7 +19,7 @@ jobs:
     needs: first-job
     steps:
       - name: Download file
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v7
         with:
           name: math-result
       
