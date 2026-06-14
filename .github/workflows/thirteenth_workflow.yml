@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: First step
-              run: sleep 30
+              run: exit 1
             
             - name: Runs on Canceled
               #возвращает run, если предидущие шаги были отменены
