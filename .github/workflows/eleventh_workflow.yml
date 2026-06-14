@@ -12,6 +12,8 @@ jobs:
         env: 
             JOB_CUSTOM_VAR: 1
         steps:
+            - name: Set New Var
+              run: echo "NEW_CUSTOM_VAR=New Value" >> "$GITHUB_ENV"
             - name: Event Vars
               env: 
                 #переменная уровня шага
@@ -24,6 +26,7 @@ jobs:
                 echo '${{ env.WF_CUSTOM_VAR }}'
                 echo $JOB_CUSTOM_VAR
                 echo $STEP_CUSTOM_VAR
+                echo $GITHUB_ENV
     
 
 
