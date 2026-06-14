@@ -1,0 +1,28 @@
+name: Thirteenth Workflow
+on: push
+
+
+jobs: 
+    # failure() - ф-ция, определяющая что шаг неудачный .succes() - ф-ция, определяющая что шаг удачный. always() - ф-ция, которая возвращает true при любом расскладе, canceled() - ф-ция, которая возвращает true в том случае если мы завершили джоб нажатием на кнопку например.
+    job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: First step
+              run: sleep 30
+            
+            - name: Runs on Canceled
+              #возвращает run, если предидущие шаги были отменены
+              if: ${{ canceled() }}
+              run: echo "Runs on Canceled"
+            
+            - name: Runs on any case
+              if: ${{ always() }}
+              run: echo "Runs on any case"
+
+            - name: Runs on Success case
+              if: ${{ success() }}
+              run: echo "Runs on Success case"
+
+            - name: Runs on Failure Case
+              if: ${{ failure() }}
+              run: echo "Runs on Failure case"
