@@ -9,7 +9,7 @@ jobs:
         run: expr 2 + 2 > math-result.txt
       
       - name: Upload result file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           name: math-result
           path: math-result.txt
