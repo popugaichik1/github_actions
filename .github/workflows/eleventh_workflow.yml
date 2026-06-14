@@ -1,0 +1,31 @@
+name: Eleventh workflow
+on: [push]
+
+#переменная уровня воркфлоу
+env:
+    WF_CUSTOM_VAR: 1
+
+jobs: 
+    run-first-command: 
+        runs-on: ubuntu-latest
+        #переменная уровня джоб
+        env: 
+            JOB_CUSTOM_VAR: 1
+        steps:
+            - name: Event Vars
+              env: 
+                #переменная уровня шага
+                STEP_CUSTOM_VAR: STEP 1
+                WF_CUSTOM_VAR: WF 1 - STEP 2
+              run: |
+                echo $GITHUB_REF
+                echo '${{ github.ref }}'
+                echo $WF_CUSTOM_VAR
+                echo '${{ env.WF_CUSTOM_VAR }}'
+                echo $JOB_CUSTOM_VAR
+                echo $STEP_CUSTOM_VAR
+    
+
+
+
+                
