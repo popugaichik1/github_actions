@@ -1,5 +1,10 @@
 name: 'Install and Cache Node Modules'
 description: 'Some Description'
+
+inputs:
+  caching:
+    required: true
+    description:
 runs:
   using: 'composite'
   steps:
